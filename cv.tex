@@ -25,7 +25,9 @@
 
 \newcommand{\mysec}[1]{\vspace{2em}\textsc{\large #1}\vspace{1mm}\hrule\vspace{2mm}}
 \newcommand{\mysub}[3]{\textbf{#1} {#2} \hfill {\em #3}}
-\newcommand{\myssub}[1]{\hspace*{2mm}\parbox{163mm}{#1}\vspace*{2mm}}
+\newcommand{\myssub}[1]{\hspace*{2mm}\parbox{163mm}{#1}\vspace*{1mm}}
+\newcommand{\fundline}[1]{\hspace*{2mm}#1\par}
+\newenvironment{keepblock}{\par\noindent\begin{minipage}{\textwidth}}{\end{minipage}\par}
 
 \begin{document}
 
@@ -48,16 +50,16 @@ baris@cs.washington.edu & \url{http://bariskasikci.org/} \\
 
 \mysec{Research Interests}
 
-My research is centered around building efficient and trustworthy computer systems. I build techniques to improve the efficiency of datacenter applications, provide systems support for heterogeneous platforms, verify the safety of complex distributed systems, analyze and fix failures, and improve the security of modern hardware. Building efficient and trustworthy systems requires a combination of approaches. My work draws insights from a broad set of disciplines such as systems, computer architecture, and programming languages.
+My research focuses on systems for AI and on building trustworthy software infrastructure. In systems for AI, I develop end-to-end techniques that span kernels, runtimes, and distributed infrastructure to improve inference and training performance, programmability, and efficiency across heterogeneous hardware. In parallel, I work on systems security and reliability, including practical approaches for securing legacy code and mechanisms to detect and mitigate data corruption in large-scale systems. More broadly, my work combines computer systems, architecture, and programming languages to build efficient, resilient, and widely usable computing platforms.
 
 \mysec{Education}
 
-\mysub{Ecole Polytechnique F\'ed\'erale de Lausanne (EPFL)}{}{Lausanne, Switzerland} \vspace*{1mm} \\
+\mysub{Ecole Polytechnique F\'ed\'erale de Lausanne (EPFL)}{}{Lausanne, Switzerland} \vspace*{1mm} \\*
 \myssub{\vspace{2mm}\textit{PhD in Computer Science}\hfill Sep. 2010--Dec. 2015 \\
 Thesis: Techniques for Detection, Root Cause Diagnosis, \\ \phantom{xxxxxx} and Classification of In-Production Concurrency Bugs \\
 Advisor: Prof. George Candea} \vspace{1mm}
 
-\mysub{Middle East Technical University (METU)}{}{Ankara, Turkey} \vspace*{1mm} \\
+\mysub{Middle East Technical University (METU)}{}{Ankara, Turkey} \vspace*{1mm} \\*
 \myssub{\vspace{2mm}\textit{M.Sc. in Electrical and Electronics Engineering} \hfill Sep. 2006--Jun. 2009 \\
 Thesis:  Variability Modeling in Software Product Lines \\
 {\textit{Graduated with the top grade}} \\
@@ -68,10 +70,10 @@ Project: Embedded Target Estimation, Detection, and Tracking\\
 {\textit{Graduated with High Honors}} \\
 Advisor: Prof. Arzu Koc}
 
-\newpage
-
 \mysec{Awards and Honors}
+\begin{keepblock}
 \myssub{DSN Rising Star in Dependability Award \hfill 2025} \\
+\myssub{Open Compute Research Award \hfill 2025} \\
 \myssub{MLSys Best Paper Award \hfill 2025} \\
 \myssub{AMD Faculty Research  Award \hfill 2024} \\
 \myssub{Amazon Research Award \hfill 2024} \\
@@ -80,6 +82,7 @@ Advisor: Prof. Arzu Koc}
 \myssub{SIGCOMM Best Paper Award \hfill 2024} \\
 \myssub{IEEE Micro Top Pick, ''Ocolos'' \hfill 2023} \\
 \myssub{Google Research Award \hfill 2023} \\
+\end{keepblock}
 \myssub{MICRO Best Paper Award\hfill 2022} \\
 \myssub{Morris Wellman Endowed Professorship \hfill 2022} \\
 \myssub{PLDI Distinguished Reviewer Award \hfill 2022} \\
@@ -107,9 +110,10 @@ Advisor: Prof. Arzu Koc}
 
 \mysec{Student Awards and Honors}
 
+\begin{keepblock}
 \myssub{ACM SIGARCH/IEEE CS TCCA Outstanding Dissertation Award, Tanvir Ahmed Khan \hfill 2024} \\
 \myssub{NSF Graduate Research Fellowship (GRFP), Matthew Giordano \hfill 2024} \\
-\myssub{Towner Prize for Outstanding for Outstanding Ph.D. research, Tanvir Ahmed Khan \hfill 2024} \\
+\myssub{Towner Prize for Outstanding Ph.D. Research, Tanvir Ahmed Khan \hfill 2024} \\
 \myssub{NSF CSGrad4US Fellowship, Hannah Lin \hfill 2023} \\
 \myssub{ACM Student Research Competition First Prize (MICRO), Kan Zhu \hfill 2022} \\
 \myssub{Rackham Doctoral Fellowship, Tanvir Ahmed Khan \hfill 2022} \\
@@ -118,6 +122,7 @@ Advisor: Prof. Arzu Koc}
 \myssub{Facebook Fellowship Finalist, Ian Neal \hfill 2021} \\
 \myssub{ACM Student Research Competition First Prize (MICRO), Shixin Song \hfill 2021} \\
 \myssub{CRA Outstanding Undergraduate Researcher Award Honorable Mention, Shixin Song \hfill 2021} \\
+\end{keepblock}
 \myssub{CRA Undergraduate Awards, Honorable Mention, Shixin Song \hfill 2021} \\
 \myssub{NSF Graduate Research Fellowship (GRFP), Kevin Loughlin \hfill 2020} \\
 \myssub{Award for Excellence in Climate, Diversity, Equity, and Inclusion; Univ. of Michigan, Kevin Loughlin \hfill 2020} \\
@@ -136,43 +141,43 @@ Advisor: Prof. Arzu Koc}
 
 \mysec{Funding}
 
-Overall, I raised 10.346 million USD for my group’s research funding, including fellowships (82.344M total amount of funding).\\
+Overall, I raised 10.396 million USD for my group’s research funding, including fellowships (82.394M total amount of funding).\\
 
-\myssub{Samsung Advaned Technology Grant, 400K USD, PI \hfill 2025} \\
-\myssub{DARPA TRACTOR Grant, 1M USD, PI \hfill 2025} \\
-\myssub{AMD Faculty Research Award, 125K USD, PI \hfill 2024} \\
-\myssub{Open Compute Project, 47.5K USD, PI \hfill 2024} \\
-\myssub{Amazon Gift, 50K USD, PI \hfill 2024} \\
-\myssub{SRC JUMP 2.0 SEED grant, 50K USD, PI \hfill 2024} \\
-\myssub{IARPA-H, 400K USD (2M USD total), co-PI \hfill 2024} \\
-\myssub{Google Gift, 50K USD, PI \hfill 2024} \\
-\myssub{SRC JUMP 2.0 SEED grant, 80K USD, PI \hfill 2023} \\
-\myssub{NSF Large, 1M USD (5M USD total), co-PI \hfill 2023} \\
-\myssub{SRC JUMP 2.0 grant, 1M USD (35M USD total), PI \hfill 2023} \\
-\myssub{Intel Transformative Server Architectures Center, 150K USD (600K USD total), PI \hfill 2022} \\
-\myssub{Google Gift, 30K USD, PI \hfill 2022} \\
-
-\myssub{ONR Grant, 510K USD, PI \hfill 2022} \\
-\myssub{Morris Wellman Professorship Endowment, 40K USD, PI \hfill 2022} \\
-\myssub{Google Fuzzing Research Award, 50K USD, PI \hfill 2021} \\
-\myssub{Microsoft Research Faculty Fellowship, 200K USD, PI \hfill 2021} \\
-\myssub{VMware Early Career Grant, 50K USD, PI \hfill 2021} \\
-\myssub{SRC Realignment Grant, 406K USD, PI \hfill 2021} \\
-\myssub{NSF CAREER Award, 576K USD, PI \hfill 2020} \\
-\myssub{NSF/Intel FoMR Grant, 180K USD (360K USD total), co-PI \hfill 2020} \\
-\myssub{NSF FMitF Grant, 375K USD (750K USD total), co-PI \hfill 2020} \\
-\myssub{DARPA AMP Grant, 600K USD (1.8M USD total), PI \hfill 2020} \\
-\myssub{SRC Seed Grant, 50K USD (150K USD total), PI \hfill 2020} \\
-\myssub{Intel Rising Star Award, 50K USD, PI \hfill 2020} \\
-\myssub{Intel Faculty Award, Performance Debugging, 75K USD, PI \hfill 2019} \\
-\myssub{Google Cloud Computing Grant, 5K USD, PI \hfill 2019} \\
-\myssub{Google Faculty Research Award, 80K USD, PI \hfill 2019} \\
-\myssub{Intel Faculty Award, Automated Performance Optimization, 75K USD, PI \hfill 2018} \\
-\myssub{Michigan College of Engineering Grant, 3K USD, PI \hfill 2018} \\
-\myssub{Michigan Cambridge Research Initiative, 15K USD, PI \hfill 2018} \\
-\myssub{Intel Gift, SysTEX'18 Workshop Sponsorship, 2K USD, PI \hfill 2018} \\
-\myssub{Microsoft Azure Cloud Computing Grant, 25K USD, PI \hfill 2018} \\
-\myssub{SRC JUMP 1.0 grant, 1,25M USD (31.2M USD total), PI \hfill 2017} \\
+\fundline{Samsung Advanced Technology Grant, 400K USD, PI \hfill 2025}
+\fundline{DARPA TRACTOR Grant, 1M USD, PI \hfill 2025}
+\fundline{Open Compute Project, 50K USD, PI \hfill 2025}
+\fundline{AMD Faculty Research Award, 125K USD, PI \hfill 2024}
+\fundline{Open Compute Project, 47.5K USD, PI \hfill 2024}
+\fundline{Amazon Gift, 50K USD, PI \hfill 2024}
+\fundline{SRC JUMP 2.0 SEED grant, 50K USD, PI \hfill 2024}
+\fundline{IARPA-H, 400K USD (2M USD total), co-PI \hfill 2024}
+\fundline{Google Gift, 50K USD, PI \hfill 2024}
+\fundline{SRC JUMP 2.0 SEED grant, 80K USD, PI \hfill 2023}
+\fundline{NSF Large, 1M USD (5M USD total), co-PI \hfill 2023}
+\fundline{SRC JUMP 2.0 grant, 1M USD (35M USD total), PI \hfill 2023}
+\fundline{Intel Transformative Server Architectures Center, 150K USD (600K USD total), PI \hfill 2022}
+\fundline{Google Gift, 30K USD, PI \hfill 2022}
+\fundline{ONR Grant, 510K USD, PI \hfill 2022}
+\fundline{Morris Wellman Professorship Endowment, 40K USD, PI \hfill 2022}
+\fundline{Google Fuzzing Research Award, 50K USD, PI \hfill 2021}
+\fundline{Microsoft Research Faculty Fellowship, 200K USD, PI \hfill 2021}
+\fundline{VMware Early Career Grant, 50K USD, PI \hfill 2021}
+\fundline{SRC Realignment Grant, 406K USD, PI \hfill 2021}
+\fundline{NSF CAREER Award, 576K USD, PI \hfill 2020}
+\fundline{NSF/Intel FoMR Grant, 180K USD (360K USD total), co-PI \hfill 2020}
+\fundline{NSF FMitF Grant, 375K USD (750K USD total), co-PI \hfill 2020}
+\fundline{DARPA AMP Grant, 600K USD (1.8M USD total), PI \hfill 2020}
+\fundline{SRC Seed Grant, 50K USD (150K USD total), PI \hfill 2020}
+\fundline{Intel Rising Star Award, 50K USD, PI \hfill 2020}
+\fundline{Intel Faculty Award, Performance Debugging, 75K USD, PI \hfill 2019}
+\fundline{Google Cloud Computing Grant, 5K USD, PI \hfill 2019}
+\fundline{Google Faculty Research Award, 80K USD, PI \hfill 2019}
+\fundline{Intel Faculty Award, Automated Performance Optimization, 75K USD, PI \hfill 2018}
+\fundline{Michigan College of Engineering Grant, 3K USD, PI \hfill 2018}
+\fundline{Michigan Cambridge Research Initiative, 15K USD, PI \hfill 2018}
+\fundline{Intel Gift, SysTEX'18 Workshop Sponsorship, 2K USD, PI \hfill 2018}
+\fundline{Microsoft Azure Cloud Computing Grant, 25K USD, PI \hfill 2018}
+\fundline{SRC JUMP 1.0 grant, 1,25M USD (31.2M USD total), PI \hfill 2017}
 
 %% \mysec{Student Awards and Honors}
 %% \myssub{NSF Graduate Research Fellowship (GRFP), Kevin Loughlin \hfill 2020} \\
@@ -182,40 +187,54 @@ Overall, I raised 10.346 million USD for my group’s research funding, includin
 %% \myssub{ACM Student Research Competition First Prize, Nathan Brown \hfill 2020} \\
 %% \myssub{Microsoft Research PhD Fellowship, Andrew Quinn \hfill 2017} \\
 %% \myssub{NSF Graduate Research Fellowship (GRFP), Andrew Quinn \hfill 2017} \\
-
+\pagebreak
 \mysec{Employment}
 
-\mysub{University of Washington}{}{Seattle, Washington, USA} \\
+\begin{keepblock}
+\mysub{University of Washington}{}{Seattle, Washington, USA} \\*
 \myssub{Associate Professor\vspace{1mm} \hfill Aug. 2023-Present \\
   Paul G. Allen School of Computer Science \& Engineering}
+\end{keepblock}
 
-\mysub{Google}{}{Seattle, Washington, USA} \\
+\begin{keepblock}
+\mysub{Google}{}{Seattle, Washington, USA} \\*
 \myssub{Faculty Researcher\vspace{1mm} \hfill Jun. 2022-Present \\
    Systems Research Group}
+\end{keepblock}
 
-\mysub{University of Michigan}{}{Ann Arbor, Michigan, USA} \\
+\begin{keepblock}
+\mysub{University of Michigan}{}{Ann Arbor, Michigan, USA} \\*
 \myssub{Adjunct Associate Professor\vspace{1mm} \hfill Aug. 2023--Present \\
-  Electrical Engineering and Computer Science Deparment}
+  Electrical Engineering and Computer Science Department}
+\end{keepblock}
 
-\mysub{University of Washington}{}{Seattle, Washington, USA} \\
+\begin{keepblock}
+\mysub{University of Washington}{}{Seattle, Washington, USA} \\*
 \myssub{Affiliate Associate Professor\vspace{1mm} \hfill Jun. 2022--Aug. 2023 \\
   Paul G. Allen School of Computer Science \& Engineering}
+\end{keepblock}
 
-\mysub{University of Michigan}{}{Ann Arbor, Michigan, USA} \\
+\begin{keepblock}
+\mysub{University of Michigan}{}{Ann Arbor, Michigan, USA} \\*
 \myssub{Assistant Professor\vspace{1mm} \hfill Sep. 2017--Aug. 2023 \\
-Electrical Engineering and Computer Science Deparment}
+Electrical Engineering and Computer Science Department}
+\end{keepblock}
 
-\mysub{Microsoft Research}{}{Cambridge, United Kingdom} \\
+\begin{keepblock}
+\mysub{Microsoft Research}{}{Cambridge, United Kingdom} \\*
 \myssub{\vspace{1mm}Researcher \hfill Aug. 2016--Aug. 2017 \\
 Research on computer systems and networks}
+\end{keepblock}
 
-\mysub{Ecole Polytechnique F\'ed\'erale de Lausanne (EPFL)}{}{Lausanne, Switzerland} \\
+\begin{keepblock}
+\mysub{Ecole Polytechnique F\'ed\'erale de Lausanne (EPFL)}{}{Lausanne, Switzerland} \\*
 \myssub{\vspace{1mm}Postdoctoral Researcher \hfill Dec. 2015--Jul. 2016 \\
 Research on software security
 \begin{itemize}
 \item{I developed infrastructure that relies on hardware support to improve software security.}
 \end{itemize}
 }
+\end{keepblock}
 
 \myssub{\vspace{1mm}Research Assistant \hfill Sep. 2010--Dec. 2015 \\
 Research on software reliability with an emphasis on concurrent software
@@ -231,7 +250,8 @@ Research on software reliability with an emphasis on concurrent software
 }
 
 
-\mysub{Intel Corp.}{}{Santa Clara, CA, USA} \\
+\begin{keepblock}
+\mysub{Intel Corp.}{}{Santa Clara, CA, USA} \\*
 \myssub{\vspace{1mm}Research Intern \hfill Jul. 2015--Sep. 2015\\
 Automated root cause diagnosis of failures and security enhancements using hardware support
 \vspace{-1mm}
@@ -242,10 +262,12 @@ Automated root cause diagnosis of failures and security enhancements using hardw
 \end{itemize}
 \vspace{-2mm}
 }
+\end{keepblock}
 
 
 
-\mysub{VMware Inc.}{}{Palo Alto, CA, USA} \\
+\begin{keepblock}
+\mysub{VMware Inc.}{}{Palo Alto, CA, USA} \\*
 \myssub{\vspace{1mm}Research and Development Intern \hfill Jun. 2014--Sep. 2014\\
 Automated debugging and runtime control flow tracking
 \vspace{-1mm}
@@ -256,10 +278,12 @@ Automated debugging and runtime control flow tracking
 \end{itemize}
 \vspace{-2mm}
 }
+\end{keepblock}
 
 
 
-\mysub{Microsoft Research}{}{Redmond, WA, USA} \\
+\begin{keepblock}
+\mysub{Microsoft Research}{}{Redmond, WA, USA} \\*
 \myssub{\vspace{1mm}Research Intern \hfill Jun. 2013--Sep. 2013\\
 Efficient runtime execution sampling technique and low overhead coverage measurement
 \vspace{-1mm}
@@ -270,10 +294,10 @@ Efficient runtime execution sampling technique and low overhead coverage measure
 \end{itemize}
 \vspace{-2mm}
 }
+\end{keepblock}
 
-\newpage
-
-\mysub{Siemens Corporate Technology}{}{Istanbul, Turkey} \\
+\begin{keepblock}
+\mysub{Siemens Corporate Technology}{}{Istanbul, Turkey} \\*
 \myssub{\vspace{1mm}Senior Software Engineer \hfill Mar. 2008--May 2010 \\
 Embedded home and industrial automation software
 \vspace{-1mm}
@@ -282,9 +306,11 @@ Embedded home and industrial automation software
 \item{I designed and implemented a real-time embedded gateway software between Siemens communication processors and a building automation system using C++ on top of VxWorks.}
 \end{itemize}
 }
+\end{keepblock}
 
 
-\mysub{Aselsan Electronic Industries}{}{Ankara, Turkey} \\
+\begin{keepblock}
+\mysub{Aselsan Electronic Industries}{}{Ankara, Turkey} \\*
 \myssub{\vspace{1mm}Software Engineer \hfill May 2006--Mar. 2008 \\
 Embedded motor control and functional testing infrastructure
 \vspace{-1mm}
@@ -293,6 +319,7 @@ Embedded motor control and functional testing infrastructure
 \item{I was responsible for a real-time embedded control software for turret motor control. I also designed and implemented a full-system functional testing software using C++ on top of VxWorks for Power PC architectures.}
 \end{itemize}
 }
+\end{keepblock}
 
 \myssub{Student Intern \hfill Jun. 2005--Jul. 2005 \\
 Embedded software development
@@ -315,11 +342,37 @@ Embedded software development
 
 
 \mysec{Talks}
+\mysub{Quest for Blazingly Fast LLM Inference}{}{}
+\vspace{-2mm}
+\begin{itemize}
+  \setlength\itemsep{0em}
+\item{NVIDIA} \hfill Apr 2025
+\item{AMD} \hfill May 2025
+\item{UC Berkeley} \hfill Mar 2025
+\item{MICRO Workshop on Efficient Microarchitectures for Resilient Large Model Processing} \hfill Oct 2025
+\item{Tufts University} \hfill Nov 2024
+\end{itemize}
+\mysub{NanoFlow: Towards Optimal Large Language Model Serving Throughput}{}{}
+\vspace{-2mm}
+\begin{itemize}
+  \setlength\itemsep{0em}
+\item{Efficient Systems for Foundation Models, ICML} \hfill Jul 2025
+\end{itemize}
+\mysub{SyFI Research Showcase}{}{}
+\vspace{-2mm}
+\begin{itemize}
+  \setlength\itemsep{0em}
+\item{Industry-Academia Partnership Workshop on AI in the Cloud} \hfill May 2025
+\item{Snowflake} \hfill Nov 2025
+\item{Arm} \hfill Dec 2025
+\end{itemize}
+\mysub{Challenges and Opportunities for High-Fidelity Micro-Architectural Simulation}{}{}
+\vspace{-2mm}
 \begin{itemize}
   \setlength\itemsep{0em}
 \item{Google} \hfill Apr 2024
 \end{itemize}
-\mysub{Profile Guided Processors}{}{}
+\mysub{Profile-Guided Processors}{}{}
 \vspace{-2mm}
 \begin{itemize}
   \setlength\itemsep{0em}
@@ -372,7 +425,7 @@ Embedded software development
 \item{Greater Chicago Area Systems Research Workshop, University of Chicago (Invited Talk)} \hfill May 2018
 \item{Purdue University (Invited Talk)} \hfill May 2018
 \end{itemize}
-\mysub{Hardware-Software Co-Design for Debugging and Performance Anlysis}{}{}
+\mysub{Hardware-Software Co-Design for Debugging and Performance Analysis}{}{}
 \vspace{-2mm}
 \begin{itemize}
   \setlength\itemsep{0em}
@@ -476,29 +529,31 @@ Embedded software development
 \mysec{Professional Service}
 
 
-\mysub{PC/Area Chair}{}{}\\
+\mysub{PC/Area Chair}{}{}\\*
 \myssub{\vspace{2mm}
   ASPLOS - Vice PC Chair \hfill 2026 \\ 
-  MICRO - Datacenters, parallel architectures, Systems – Area Chair \hfill 2025 \\ 
-  ICDCS - Operating Systems and Middleware - Track Chair \hfill 2025 \\ 
+  MICRO - Datacenters, Parallel Architectures, Systems - Area Chair \hfill 2025 \\ 
+  ICDCS - Distributed Operating Systems and Middleware - Track Chair \hfill 2025 \\ 
   ASPLOS Wild and Crazy Ideas Session (WACI) \hfill 2022 \\ 
   Workshop on Hot Topics In Operating Systems (HotOS) \hfill 2021 \\
   ACM Student Research Competition (ACM SRC), SOSP 2021 \hfill 2021 \\
-  EuroSys Doctoral Workshop (Euro'DW) \hfill 2021 \\
+  EuroSys Doctoral Workshop (EuroDW) \hfill 2021 \\
   International Conference on Virtual Execution Environments (VEE) \hfill 2020 \\
   Workshop on System Software for Trusted Execution (SysTEX) (co-located with CCS'18) \hfill 2018 \\
   Symposium on Cloud Computing (SoCC) Poster Session \hfill 2018 \\
 }
 %
 
-\mysub{PC Member}{}{}\\
+\mysub{PC Member}{}{}\\*
 \myssub{\vspace{2mm}
+  Annual Conference on Machine Learning and Systems (MLSys) \hfill 2026 \\
+  Conference on Neural Information Processing Systems (NeurIPS) \hfill 2025 \\
   IEEE MICRO Top Picks \hfill 2023 \\
+  International Conference on Learning Representations (ICLR) \hfill 2025, 2026\\
   International Symposium on Computer Architecture (ISCA) \hfill 2023 \\
-  Symp. on Operating System Design and Implementation (OSDI) \hfill 2020, 2021, 2022, 2023, 2024 \\
-  Symp. on Operating Systems Principles (SOSP) \hfill 2019, 2023, 2024 \\
+  Symp. on Operating System Design and Implementation (OSDI) \hfill 2020, 2021, 2022, 2023, 2024, 2025 \\
+  Symp. on Operating Systems Principles (SOSP) \hfill 2019, 2023, 2024, 2025, 2026 \\
   Intl Conf. on Architectural Support for Programming Languages and Operating Systems (ASPLOS) \hfill 2021, 2022, 2023, 2025 \\
-  International Conference on Learning Representations (ICLR) \hfill 2025\\
   Programming Language Design and Implementation (PLDI) \hfill 2022 \\
   Intl. Symp. on Microarchitecture (MICRO) \hfill 2022, 2024 \\
   EuroSys \hfill 2019, 2021 \\
@@ -511,24 +566,22 @@ Embedded software development
   Intl. Symp. on Software Testing and Analysis (ISSTA), Artifact Evaluation Committee \hfill 2014 \\
 }\\
 
-\mysub{Journal Reviewer}{}{} \\
+\mysub{Journal Reviewer}{}{} \\*
 \myssub{\vspace{2mm}Transactions on Architecture and Code Optimization \hfill 2018\\
   Transactions on Software Engineering \hfill 2015 \\
   Transactions on Software Engineering and Methodology \hfill 2015} \\
 
-\mysub{Extended Review Committee}{}{}\\
+\mysub{Extended Review Committee}{}{}\\*
 \myssub{\vspace{2mm}
   Intl. Symp. on Microarchitecture (MICRO) \hfill 2021 \\
   Intl. Symp. on Computer Architecture (ISCA) \hfill 2021 \\
   Intl. Conf. on Architectural Support for Programming Languages and Operating Systems (ASPLOS) \hfill 2018 \\
 }\\
 
-\mysub{Shadow PC Member}{}{} \\ 
+\mysub{Shadow PC Member}{}{} \\* 
 \myssub{\vspace{2mm}EuroSys Conference on Computer Systems (EuroSys) \hfill 2013, 2015} \\
 
-\newpage
-
-\mysub{External Reviewer}{}{} \\ 
+\mysub{External Reviewer}{}{} \\* 
 \myssub{\vspace{2mm}Symp. on Operating Systems Principles (SOSP) \hfill 2011, 2013 \\
 EuroSys Conf. on Computer Systems (EuroSys) \hfill 2011, 2012 \\
 USENIX Annual Technical Conf. (USENIX ATC) \hfill 2011 \\
@@ -539,30 +592,39 @@ Intl. Conf. on Dependable Systems and Networks (DSN) \hfill 2011, 2013 \\
 Symposium on Cloud Computing (SOCC) \hfill 2012 \\
 Intl. SPIN Workshop on Model Checking of Software (SPIN) \hfill 2011} \\
 
-\mysub{Committee Member}{}{} \\
-\myssub{\vspace{2mm}University of Michigan, Computer Science and Engineering, DEI Committee \hfill 2021, 2022}\\
+\mysub{Committee Member}{}{} \\*
+\myssub{\vspace{2mm}Allen School Faculty Review Committee (FRC), Co-Chair \hfill 2025--Present}\\
+\myssub{Allen School Faculty Review Committee (FRC), Systems Representative \hfill 2024--2025}\\
+\myssub{University of Michigan, Computer Science and Engineering, DEI Committee \hfill 2021, 2022}\\
 \myssub{University of Michigan, Computer Science and Engineering, Graduate Admissions Committee \hfill 2017--2022}\\
 \myssub{OSDI Mentorship Arrangement Committee \hfill 2021}\\
 \myssub{EPFL Doctoral School of Computer and Communication Sciences Audit Committee \hfill 2015}\\
 
+\mysub{Award Committees}{}{} \\*
+\myssub{\vspace{2mm}DSN Rising Star in Dependability Award Committee \hfill 2026}\\
+\myssub{SIGARCH/IEEE CS TCCA Outstanding Dissertation Award Committee \hfill 2025, 2026}\\
 
-\mysub{Panelist}{}{} \\
+
+\mysub{Panelist}{}{} \\*
 \myssub{\vspace{2mm}National Science Foundation \hfill 2019-Present}\\
 
 
 \mysec{Teaching}
-\mysub{Systems For All (CSE 550, UW)}{(graduate)}{\rm 2023, 2025\vspace{2mm}}\\
+\mysub{Machine Learning Systems (CSE 554, UW)}{(graduate)}{\rm 2026\vspace{2mm}}\\
+\mysub{LLM Serving Systems (CSE 599, UW)}{(graduate)}{\rm 2025\vspace{2mm}}\\
+\mysub{Systems for All (CSE 550, UW)}{(graduate)}{\rm 2023, 2025\vspace{2mm}}\\
+\mysub{Systems Seminar (CSE 590s, UW)}{(graduate seminar)}{\rm 2024, 2025\vspace{2mm}}\\
 \mysub{Introduction to Operating Systems (EECS 482, Michigan)}{(undergraduate)}{\rm 2018, 2019, 2021, 2022\vspace{2mm}} \\
 \mysub{Advanced Operating Systems (EECS 582, Michigan)}{(graduate)}{\rm 2017, 2019, 2020, 2021\vspace{2mm}} 
 
 \mysec{Research Mentoring}
 
-\mysub{Postdoc}{}{} \\
+\mysub{Postdoc}{}{} \\*
 
-Yigong Hu \hfill Sep 2023-- \\
+Yigong Hu \hfill Sep 2023--Jan 2026 \\
 Rohan Kadekodi \hfill Sep 2023-- \\
 
-\mysub{PhD}{}{} \\
+\mysub{PhD}{}{} \\*
 
 Yufei Gao \hfill Sep 2025-- \\
 Steven Gao \hfill Sep 2025-- \\
@@ -583,10 +645,10 @@ Kevin Loughlin \hfill Sep 2018--Aug 2023 \\
 Tanvir Ahmed Khan \hfill Jan 2018--Jun 2023\\
 Ofir Weisse \hfill Sep 2017--May 2020 \\
 
-\mysub{Master's}{}{} \\
+\mysub{Master's}{}{} \\*
 Muhammed Ugur \hfill Jan 2021--Jan 2023
 
-\mysub{Undergraduate}{}{} \\
+\mysub{Undergraduate}{}{} \\*
 
 Yi Pan \hfill Mar 2025--\\
 Qinyu Xu \hfill Mar 2024--\\
@@ -596,8 +658,11 @@ Yiyu Liu \hfill Jan 2024--\\
 %%Haoyang Zhang \hfill Jun 2021--Jun 2022\\
 %%Diane Tchiang \hfill May 2022--Jun 2023\\
 
-\mysub{Alumni}{}{} \\
+\mysub{Alumni}{}{} \\*
 
+Yigong Hu \hfill Postdoc $\rightarrow$ Assistant Professor, Boston University, 2026\\
+Katie Lim \hfill PhD $\rightarrow$ FPGA Engineer, Oxide Computer Company, 2026\\
+Marina Minkin \hfill PhD $\rightarrow$ Stealth Project, 2026\\
 Yilong Zhao \hfill BSc $\rightarrow$ UC Berkeley PhD, 2024\\
 Qinyu Xu \hfill BSc $\rightarrow$ Purdue PhD, 2024\\
 Isaac Hou \hfill BSc $\rightarrow$ Michigan PhD, 2024\\
