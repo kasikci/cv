@@ -3,12 +3,14 @@
 \usepackage[tmargin=2.5cm,bmargin=2.5cm]{geometry}
 \usepackage{bibtopic}
 \usepackage{url}
+\usepackage{needspace}
 
 \oddsidemargin -0in
 \evensidemargin -0in
 \textwidth=165mm
 \textheight=228mm
 \parindent 0pt
+\raggedbottom
 
 \newenvironment{list1}{
   \begin{list}{\ding{113}}{%
@@ -23,11 +25,27 @@
       \setlength{\topsep}{0in} \setlength{\partopsep}{0in} 
       \setlength{\leftmargin}{0.2in}}}{\end{list}}
 
-\newcommand{\mysec}[1]{\vspace{2em}\textsc{\large #1}\vspace{1mm}\hrule\vspace{2mm}}
+% Keep a section heading with a useful amount of following content, while
+% allowing the section itself to flow across pages as it grows.
+\newcommand{\mysec}[1]{%
+  \par\addvspace{2em}%
+  \Needspace{8\baselineskip}%
+  \noindent\textsc{\large #1}\par\vspace{1mm}\hrule\vspace{2mm}%
+}
 \newcommand{\mysub}[3]{\textbf{#1} {#2} \hfill {\em #3}}
-\newcommand{\myssub}[1]{\hspace*{2mm}\parbox{163mm}{#1}\vspace*{1mm}}
+% Subentries are ordinary paragraphs, not parboxes, so long descriptions can
+% break across pages and every call forms a clean paragraph boundary.
+\newcommand{\myssub}[1]{%
+  \par\begingroup
+    \leftskip=2mm\relax
+    \noindent #1\par
+  \endgroup
+  \vspace{1mm}%
+}
 \newcommand{\fundline}[1]{\hspace*{2mm}#1\par}
-\newenvironment{keepblock}{\par\noindent\begin{minipage}{\textwidth}}{\end{minipage}\par}
+% Keep the beginning of an entry together, but never make a growing list or
+% section into one unbreakable box. This avoids large holes near page bottoms.
+\newenvironment{keepblock}{\par\Needspace{4\baselineskip}\noindent}{\par}
 
 \begin{document}
 
@@ -40,12 +58,11 @@ University of Washington
 
 \vspace{1em}
 
-\hspace{0.8in}
-\begin{tabular}{@{}p{2.5in}p{4in}}
-University of Washington\\
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+University of Washington & \\
 Box 352350 & Seattle, WA 98195-2350\\
 baris@cs.washington.edu & \url{http://bariskasikci.org/} \\
-\end{tabular}
+\end{tabular*}
 
 
 \mysec{Research Interests}
@@ -72,66 +89,66 @@ Advisor: Prof. Arzu Koc}
 
 \mysec{Awards and Honors}
 \begin{keepblock}
-\myssub{ACM SIGOPS Rising Star Award \hfill 2026} \\
-\myssub{DSN Rising Star in Dependability Award \hfill 2025} \\
-\myssub{Open Compute Research Award \hfill 2025} \\
-\myssub{MLSys Best Paper Award \hfill 2025} \\
-\myssub{AMD Faculty Research  Award \hfill 2024} \\
-\myssub{Amazon Research Award \hfill 2024} \\
-\myssub{Google Research Award \hfill 2024} \\
-\myssub{Open Compute Research Award \hfill 2024} \\
-\myssub{SIGCOMM Best Paper Award \hfill 2024} \\
-\myssub{IEEE Micro Top Pick, ''Ocolos'' \hfill 2023} \\
-\myssub{Google Research Award \hfill 2023} \\
+\myssub{ACM SIGOPS Rising Star Award \hfill 2026}
+\myssub{DSN Rising Star in Dependability Award \hfill 2025}
+\myssub{Open Compute Research Award \hfill 2025}
+\myssub{MLSys Best Paper Award \hfill 2025}
+\myssub{AMD Faculty Research  Award \hfill 2024}
+\myssub{Amazon Research Award \hfill 2024}
+\myssub{Google Research Award \hfill 2024}
+\myssub{Open Compute Research Award \hfill 2024}
+\myssub{SIGCOMM Best Paper Award \hfill 2024}
+\myssub{IEEE Micro Top Pick, ''Ocolos'' \hfill 2023}
+\myssub{Google Research Award \hfill 2023}
 \end{keepblock}
-\myssub{MICRO Best Paper Award\hfill 2022} \\
-\myssub{Morris Wellman Endowed Professorship \hfill 2022} \\
-\myssub{PLDI Distinguished Reviewer Award \hfill 2022} \\
-\myssub{Microsoft Research Faculty Fellowship \hfill 2021} \\
-\myssub{Google Fuzzing Research Award \hfill 2021} \\
-\myssub{VMware Early Career Grant \hfill 2021} \\
-\myssub{IEEE Micro Top Pick Honorable Mention, ''Agamotto'' \hfill 2021} \\
-\myssub{NSF CAREER Award \hfill 2020} \\
-\myssub{Intel Rising Star Award \hfill 2020} \\
-\myssub{IEEE Micro Top Pick Honorable Mention, ''NDA'' \hfill 2020} \\
-\myssub{Google Faculty Research Award \hfill 2019} \\
-\myssub{IEEE Micro Top Pick, ''Foreshadow'' \hfill 2019} \\
-\myssub{Intel Faculty Award \hfill 2019} \\
-\myssub{Jay Lepreau Best Paper Award, OSDI \hfill 2018} \\
-\myssub{Intel Faculty Award \hfill 2018} \\
-\myssub{Microsoft Azure Cloud Computing Award \hfill 2017} \\
-\myssub{Outstanding Reviewer Award, WWW \hfill 2017} \\
-\myssub{Patrick Denantes Memorial Prize for outstanding PhD thesis, EPFL \hfill 2016} \\
-\myssub{EuroSys Roger Needham Award for Best PhD. Thesis in Computer Systems in Europe \hfill 2016} \\
-\myssub{Intel Corp. Software and Services Group, Grant \hfill 2014--2016} \\
-\myssub{VMware Inc., Doctoral Fellowship \hfill 2014--2015} \\
-\myssub{EPFL, Doctoral Fellowship \hfill 2010--2011} \\
-\myssub{Scientific and Technological Research Council of Turkey, Master Scholarship \hfill 2006--2008} \\
+\myssub{MICRO Best Paper Award\hfill 2022}
+\myssub{Morris Wellman Endowed Professorship \hfill 2022}
+\myssub{PLDI Distinguished Reviewer Award \hfill 2022}
+\myssub{Microsoft Research Faculty Fellowship \hfill 2021}
+\myssub{Google Fuzzing Research Award \hfill 2021}
+\myssub{VMware Early Career Grant \hfill 2021}
+\myssub{IEEE Micro Top Pick Honorable Mention, ''Agamotto'' \hfill 2021}
+\myssub{NSF CAREER Award \hfill 2020}
+\myssub{Intel Rising Star Award \hfill 2020}
+\myssub{IEEE Micro Top Pick Honorable Mention, ''NDA'' \hfill 2020}
+\myssub{Google Faculty Research Award \hfill 2019}
+\myssub{IEEE Micro Top Pick, ''Foreshadow'' \hfill 2019}
+\myssub{Intel Faculty Award \hfill 2019}
+\myssub{Jay Lepreau Best Paper Award, OSDI \hfill 2018}
+\myssub{Intel Faculty Award \hfill 2018}
+\myssub{Microsoft Azure Cloud Computing Award \hfill 2017}
+\myssub{Outstanding Reviewer Award, WWW \hfill 2017}
+\myssub{Patrick Denantes Memorial Prize for outstanding PhD thesis, EPFL \hfill 2016}
+\myssub{EuroSys Roger Needham Award for Best PhD. Thesis in Computer Systems in Europe \hfill 2016}
+\myssub{Intel Corp. Software and Services Group, Grant \hfill 2014--2016}
+\myssub{VMware Inc., Doctoral Fellowship \hfill 2014--2015}
+\myssub{EPFL, Doctoral Fellowship \hfill 2010--2011}
+\myssub{Scientific and Technological Research Council of Turkey, Master Scholarship \hfill 2006--2008}
 
 
 \mysec{Student Awards and Honors}
 
 \begin{keepblock}
-\myssub{ACM SIGARCH/IEEE CS TCCA Outstanding Dissertation Award, Tanvir Ahmed Khan \hfill 2024} \\
-\myssub{NSF Graduate Research Fellowship (GRFP), Matthew Giordano \hfill 2024} \\
-\myssub{Towner Prize for Outstanding Ph.D. Research, Tanvir Ahmed Khan \hfill 2024} \\
-\myssub{NSF CSGrad4US Fellowship, Hannah Lin \hfill 2023} \\
-\myssub{ACM Student Research Competition First Prize (MICRO), Kan Zhu \hfill 2022} \\
-\myssub{Rackham Doctoral Fellowship, Tanvir Ahmed Khan \hfill 2022} \\
-\myssub{Google Fellowship, Kevin Loughlin \hfill 2021} \\
-\myssub{Facebook Fellowship, Marina Minkin \hfill 2021} \\
-\myssub{Facebook Fellowship Finalist, Ian Neal \hfill 2021} \\
-\myssub{ACM Student Research Competition First Prize (MICRO), Shixin Song \hfill 2021} \\
-\myssub{CRA Outstanding Undergraduate Researcher Award Honorable Mention, Shixin Song \hfill 2021} \\
-\myssub{CRA Undergraduate Awards, Honorable Mention, Shixin Song \hfill 2021} \\
-\myssub{NSF Graduate Research Fellowship (GRFP), Kevin Loughlin \hfill 2020} \\
-\myssub{Award for Excellence in Climate, Diversity, Equity, and Inclusion; Univ. of Michigan, Kevin Loughlin \hfill 2020} \\
-\myssub{NSF Graduate Research Fellowship (GRFP), Andrew Loveless \hfill 2020} \\
-\myssub{Facebook Fellowship Finalist, Tanvir Ahmed Khan \hfill 2020} \\
-\myssub{ACM Student Research Competition First Prize (CGO), Nathan Brown \hfill 2020} \\
+\myssub{ACM SIGARCH/IEEE CS TCCA Outstanding Dissertation Award, Tanvir Ahmed Khan \hfill 2024}
+\myssub{NSF Graduate Research Fellowship (GRFP), Matthew Giordano \hfill 2024}
+\myssub{Towner Prize for Outstanding Ph.D. Research, Tanvir Ahmed Khan \hfill 2024}
+\myssub{NSF CSGrad4US Fellowship, Hannah Lin \hfill 2023}
+\myssub{ACM Student Research Competition First Prize (MICRO), Kan Zhu \hfill 2022}
+\myssub{Rackham Doctoral Fellowship, Tanvir Ahmed Khan \hfill 2022}
+\myssub{Google Fellowship, Kevin Loughlin \hfill 2021}
+\myssub{Facebook Fellowship, Marina Minkin \hfill 2021}
+\myssub{Facebook Fellowship Finalist, Ian Neal \hfill 2021}
+\myssub{ACM Student Research Competition First Prize (MICRO), Shixin Song \hfill 2021}
+\myssub{CRA Outstanding Undergraduate Researcher Award Honorable Mention, Shixin Song \hfill 2021}
+\myssub{CRA Undergraduate Awards, Honorable Mention, Shixin Song \hfill 2021}
+\myssub{NSF Graduate Research Fellowship (GRFP), Kevin Loughlin \hfill 2020}
+\myssub{Award for Excellence in Climate, Diversity, Equity, and Inclusion; Univ. of Michigan, Kevin Loughlin \hfill 2020}
+\myssub{NSF Graduate Research Fellowship (GRFP), Andrew Loveless \hfill 2020}
+\myssub{Facebook Fellowship Finalist, Tanvir Ahmed Khan \hfill 2020}
+\myssub{ACM Student Research Competition First Prize (CGO), Nathan Brown \hfill 2020}
 \end{keepblock}
-\myssub{Microsoft Research PhD Fellowship, Andrew Quinn \hfill 2017} \\
-\myssub{NSF Graduate Research Fellowship (GRFP), Andrew Quinn \hfill 2017} \\
+\myssub{Microsoft Research PhD Fellowship, Andrew Quinn \hfill 2017}
+\myssub{NSF Graduate Research Fellowship (GRFP), Andrew Quinn \hfill 2017}
 
 
 %% \myssub{Middle East Technical University, Dean's High Honor List \hfill 2006} \\
@@ -189,7 +206,6 @@ Overall, I raised 10.426 million USD for my group’s research funding, includin
 %% \myssub{ACM Student Research Competition First Prize, Nathan Brown \hfill 2020} \\
 %% \myssub{Microsoft Research PhD Fellowship, Andrew Quinn \hfill 2017} \\
 %% \myssub{NSF Graduate Research Fellowship (GRFP), Andrew Quinn \hfill 2017} \\
-\pagebreak
 \mysec{Employment}
 
 \begin{keepblock}
@@ -557,8 +573,6 @@ Embedded software development
   Symposium on Cloud Computing (SoCC) Poster Session \hfill 2018 \\
 }
 
-\pagebreak
-
 \mysub{PC Member}{}{}\\*
 \myssub{\vspace{2mm}
   Annual Conference on Machine Learning and Systems (MLSys) \hfill 2026 \\
@@ -579,25 +593,25 @@ Embedded software development
   Symp. on Cloud Computing (SoCC) \hfill 2018 \\
   World Wide Web Conference (WWW) \hfill 2017 \\
   Intl. Symp. on Software Testing and Analysis (ISSTA), Artifact Evaluation Committee \hfill 2014 \\
-}\\
+}
 
 \mysub{Journal Reviewer}{}{} \\*
-\myssub{\vspace{2mm}Transactions on Architecture and Code Optimization \hfill 2018\\
+\myssub{\vspace{2mm}Transactions on Architecture and Code Optimization \hfill 2018
   Transactions on Software Engineering \hfill 2015 \\
-  Transactions on Software Engineering and Methodology \hfill 2015} \\
+  Transactions on Software Engineering and Methodology \hfill 2015}
 
 \mysub{Extended Review Committee}{}{}\\*
 \myssub{\vspace{2mm}
   Intl. Symp. on Microarchitecture (MICRO) \hfill 2021 \\
   Intl. Symp. on Computer Architecture (ISCA) \hfill 2021 \\
   Intl. Conf. on Architectural Support for Programming Languages and Operating Systems (ASPLOS) \hfill 2018 \\
-}\\
+}
 
 \mysub{Shadow PC Member}{}{} \\* 
-\myssub{\vspace{2mm}EuroSys Conference on Computer Systems (EuroSys) \hfill 2013, 2015} \\
+\myssub{\vspace{2mm}EuroSys Conference on Computer Systems (EuroSys) \hfill 2013, 2015}
 
 \mysub{External Reviewer}{}{} \\* 
-\myssub{\vspace{2mm}Symp. on Operating Systems Principles (SOSP) \hfill 2011, 2013 \\
+\myssub{\vspace{2mm}Symp. on Operating Systems Principles (SOSP) \hfill 2011, 2013
 EuroSys Conf. on Computer Systems (EuroSys) \hfill 2011, 2012 \\
 USENIX Annual Technical Conf. (USENIX ATC) \hfill 2011 \\
 Intl. Conf. on Compiler Construction (CC) \hfill 2017 \\
@@ -605,25 +619,23 @@ Workshop on Hot Topics in Operating Systems (HotOS) \hfill 2011, 2013 \\
 Conf. on Innovative Data Systems Research (CIDR)\hfill 2013\\
 Intl. Conf. on Dependable Systems and Networks (DSN) \hfill 2011, 2013 \\
 Symposium on Cloud Computing (SOCC) \hfill 2012 \\
-Intl. SPIN Workshop on Model Checking of Software (SPIN) \hfill 2011} \\
-
-\pagebreak
+Intl. SPIN Workshop on Model Checking of Software (SPIN) \hfill 2011}
 
 \mysub{Committee Member}{}{} \\*
-\myssub{\vspace{2mm}Allen School Faculty Recruiting Committee (FRC), Co-Chair \hfill 2025--Present}\\
-\myssub{Allen School Faculty Recruiting Committee (FRC), Systems Representative \hfill 2024--2025}\\
-\myssub{University of Michigan, Computer Science and Engineering, DEI Committee \hfill 2021, 2022}\\
-\myssub{University of Michigan, Computer Science and Engineering, Graduate Admissions Committee \hfill 2017--2022}\\
-\myssub{OSDI Mentorship Arrangement Committee \hfill 2021}\\
-\myssub{EPFL Doctoral School of Computer and Communication Sciences Audit Committee \hfill 2015}\\
+\myssub{\vspace{2mm}Allen School Faculty Recruiting Committee (FRC), Co-Chair \hfill 2025--Present}
+\myssub{Allen School Faculty Recruiting Committee (FRC), Systems Representative \hfill 2024--2025}
+\myssub{University of Michigan, Computer Science and Engineering, DEI Committee \hfill 2021, 2022}
+\myssub{University of Michigan, Computer Science and Engineering, Graduate Admissions Committee \hfill 2017--2022}
+\myssub{OSDI Mentorship Arrangement Committee \hfill 2021}
+\myssub{EPFL Doctoral School of Computer and Communication Sciences Audit Committee \hfill 2015}
 
 \mysub{Award Committees}{}{} \\*
-\myssub{\vspace{2mm}DSN Rising Star in Dependability Award Committee \hfill 2026}\\
-\myssub{SIGARCH/IEEE CS TCCA Outstanding Dissertation Award Committee \hfill 2025, 2026}\\
+\myssub{\vspace{2mm}DSN Rising Star in Dependability Award Committee \hfill 2026}
+\myssub{SIGARCH/IEEE CS TCCA Outstanding Dissertation Award Committee \hfill 2025, 2026}
 
 
 \mysub{Panelist}{}{} \\*
-\myssub{\vspace{2mm}National Science Foundation \hfill 2019-Present}\\
+\myssub{\vspace{2mm}National Science Foundation \hfill 2019-Present}
 
 
 \mysec{Teaching}
@@ -832,10 +844,10 @@ Yifan Zhao \hfill BSc $\rightarrow$ UIUC PhD, 2019 \\
 %% \mysub{Hobbies}{}{}\\
 %% \myssub{Athletics(track and field events), grip training, arm-wrestling, skiing}
 
-\myssub{English: fluent \\
+\myssub{English: fluent
 French: fluent \\
 Turkish: native \\
-German: beginner}\\
+German: beginner}
 
 %% \mysec{References}
 
